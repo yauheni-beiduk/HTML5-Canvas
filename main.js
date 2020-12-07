@@ -36,14 +36,19 @@ function clearWindow() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
+function goDraw() {
+    isDrawing = false;
+}
+
 canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     lastX = e.offsetX;
     lastY = e.offsetY;
 });
+
 clear.addEventListener('click', clearWindow);
 colors.addEventListener('blur', changeColors);    
-size.addEventListener('mousemove', (changeSize));   
+size.addEventListener('mousemove', changeSize);   
 canvas.addEventListener('mousemove', draw);
-canvas.addEventListener('mouseup',  () => isDrawing = false);
-canvas.addEventListener('mouseout',  () => isDrawing = false);
+canvas.addEventListener('mouseup',  goDraw);
+canvas.addEventListener('mouseout', goDraw);
