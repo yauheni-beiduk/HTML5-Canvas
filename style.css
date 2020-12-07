@@ -1,0 +1,13 @@
+html, body {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.controls {
+    font-size: 20px;
+    margin-left: 20px;
+}
